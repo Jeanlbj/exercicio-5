@@ -11,3 +11,17 @@ class Venda(Transacao):
 
     def listarCliente(self):
         return self.__cliente
+
+    # Metodos da Classe
+
+    @staticmethod
+    def vender(produto, qtdeVenda):
+        if produto.verificarEstoqueInsuficiente(qtdeVenda) is True:
+            print("Estoque insuficiente")
+            return False
+        else:
+            produto.debitarEstoque(qtdeVenda)
+            print(produto.calcularValorVenda(qtdeVenda))
+            if produto.verificarEstoqueBaixo() is True:
+                print("Estoque baixo")
+            return True

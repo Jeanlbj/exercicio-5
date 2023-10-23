@@ -19,3 +19,14 @@ class Compra(Transacao): # Classe filha
 
     def listarFornecedor(self):
         return self.__fornecedor
+
+    # Metodos da Classe
+
+    @staticmethod
+    def comprar(produto, qtdeComprada):
+        if produto.verificarEstoqueExcedente(qtdeComprada) is True:
+            print("Estoque excedente")
+            return False
+        else:
+            produto.creditarEstoque()(qtdeComprada)
+            return True
