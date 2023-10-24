@@ -6,11 +6,12 @@ class Produto:
     def __init__(self):
         self.__nome = ""
         self.__qtdeEstoque = 0
-        self.__precoUnit = 0
+        self.__precoUnit = 0.0
         self.__estoqueMinimo = 0
         self.__estoqueMaximo = 0
         self.__historico = []
-        self.__transacao = ""
+        self.__compra = []
+        self.__venda = []
 
     def setNome(self, nome):
         self.__nome = nome
@@ -42,19 +43,28 @@ class Produto:
     def getEstoqueMaximo(self):
         return self.__estoqueMaximo
 
-    def setHistorico(self, historico):
-        self.__historico = historico
+    def addCompra(self, compra):
+        self.__compra.append(compra)
 
-    def addTransacao(self, transacao):
-        self.__transacao = transacao
+    def removerCompra(self, compra):
+        self.__compra.remove(compra)
 
-    def listarTransacao(self):
-        return self.__transacao
+    def listarCompra(self):
+        return self.__compra
+
+    def addVenda(self, venda):
+        self.__venda.append(venda)
+
+    def removerVenda(self, venda):
+        self.__venda.remove(venda)
+
+    def listarVenda(self):
+        return self.__venda
 
     # Metodos da Classe
 
     def debitarEstoque(self, debitarEstoque):
-        self.__transacao -= debitarEstoque
+        self.__qtdeEstoque -= debitarEstoque
 
     def creditarEstoque(self, creditarEstoque):
         self.__qtdeEstoque += creditarEstoque

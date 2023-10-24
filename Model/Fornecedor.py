@@ -5,7 +5,7 @@ class Fornecedor(Pessoa):
     def __init__(self):
         super().__init__()
         self.__cnpj = ""
-        self.__compra = ""
+        self.__compra = []
 
     def setCnpj(self, cnpj):
         self.__cnpj = cnpj
@@ -14,7 +14,10 @@ class Fornecedor(Pessoa):
         return self.__cnpj
 
     def addCompra(self, compra):
-        self.__compra = compra
+        self.__compra.append(compra)
+
+    def removerCompra(self, compra):
+        self.__compra.remove(compra)
 
     def listarCompra(self):
         return self.__compra

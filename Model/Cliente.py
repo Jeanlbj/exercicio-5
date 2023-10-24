@@ -4,7 +4,7 @@ class Cliente(Pessoa): # Classe filha
     def __init__(self):
         super().__init__()
         self.__cpf = ""
-        self.__venda = ""
+        self.__venda = []
 
     def setCpf(self, cpf):
         self.__cpf = cpf
@@ -13,7 +13,10 @@ class Cliente(Pessoa): # Classe filha
         return self.__cpf
 
     def addVenda(self, venda):
-        self.__venda = venda
+        self.__venda.append(venda)
+
+    def removerVenda(self, venda):
+        self.__venda.remove(venda)
 
     def listarVenda(self):
         return self.__venda

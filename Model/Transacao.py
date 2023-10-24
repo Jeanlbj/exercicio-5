@@ -3,7 +3,7 @@ class Transacao: # Classe pai
     def __init__(self):
         self.__dataTransacao = ""
         self.__qtde = 0
-        self.__produto = ""
+        self.__produto = []
 
     def setDataTransacao(self, dataTransacao):
         self.__dataTransacao = dataTransacao
@@ -18,7 +18,10 @@ class Transacao: # Classe pai
         return self.__qtde
 
     def addProduto(self, produto):
-        self.__produto = produto
+        self.__produto.append(produto)
+
+    def removerProduto(self, produto):
+        self.__produto.remove(produto)
 
     def listarProduto(self):
         return self.__produto
