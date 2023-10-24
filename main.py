@@ -6,6 +6,10 @@ from Model.Venda import Venda
 
 if __name__ == "__main__":
 
+    # Print inicial
+
+    print("CONTROLE DE ESTOQUE")
+
     # Criando Produto
 
     produto1 = Produto()
@@ -152,6 +156,8 @@ if __name__ == "__main__":
     fornecedor2.addCompra(compra3)
     fornecedor2.addCompra(compra4)
 
+    print()
+
     # Efetuando vendas
 
     print("Venda 1:")
@@ -201,3 +207,18 @@ if __name__ == "__main__":
     print("Compra 4:")
     compra4.toStr()
     compra4.comprar(produto4, 120)
+
+    print()
+
+    # Printando produtos e seu estoque
+
+    print("Produtos Disponiveis:")
+
+    print(produto1.toStr())
+    print(produto2.toStr())
+    print(produto3.toStr())
+    print(produto4.toStr())
+
+    print()
+
+    print("PROGRAMA FINALIZADO.")

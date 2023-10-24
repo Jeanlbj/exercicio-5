@@ -38,7 +38,7 @@ class Compra(Transacao): # Classe filha
             return False
         else:
             produto.creditarEstoque(qtdeCompra)
-            print(f"Valor Total: {produto.calcularValorCompra(qtdeCompra)}")
+            print(f"Valor Total: R$ {produto.calcularValorCompra(qtdeCompra):.2f}")
             return True
 
     def toStr(self):

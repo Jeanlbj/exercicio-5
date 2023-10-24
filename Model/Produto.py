@@ -111,3 +111,8 @@ class Produto:
 
     def exibirHistorico(self):
         return self.__historico
+
+    def toStr(self):
+        return (f"\nProduto: {self.getNome()}"
+                f"\nValor Unitario: {self.getPrecoUnit():.2f}"
+                f"\nEstoque disponivel: {self.getQtdeEstoque()}")

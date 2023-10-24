@@ -32,7 +32,7 @@ class Venda(Transacao):
         else:
             produto.debitarEstoque(qtdeVenda)
             print(f"Quatidade: {qtdeVenda}")
-            print(f"Valor Total: {produto.calcularValorVenda(qtdeVenda)}")
+            print(f"Valor Total: R$ {produto.calcularValorVenda(qtdeVenda):.2f}")
             if produto.verificarEstoqueBaixo() is True:
                 print("Estoque baixo")
             return True
