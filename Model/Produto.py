@@ -91,6 +91,11 @@ class Produto:
         valor = self.__precoUnit * qtdeVenda
         return valor
 
+    def calcularValorCompra(self, qtdeCompra):
+        for compra in range(len(self.listarCompra())):
+            valor = self.__compra[compra].getPrecoUnit() * qtdeCompra
+            return valor
+
     def vender(self, qtdeVenda):
         objeto = Venda()
         if objeto.vender(objeto, qtdeVenda) is True:

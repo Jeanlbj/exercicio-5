@@ -32,10 +32,17 @@ class Compra(Transacao): # Classe filha
     # Metodos da Classe
 
     @staticmethod
-    def comprar(produto, qtdeComprada):
-        if produto.verificarEstoqueExcedente(qtdeComprada) is True:
+    def comprar(produto, qtdeCompra):
+        if produto.verificarEstoqueExcedente(qtdeCompra) is True:
             print("Estoque excedente")
             return False
         else:
-            produto.creditarEstoque()(qtdeComprada)
+            produto.creditarEstoque(qtdeCompra)
+            print(f"Valor Total: {produto.calcularValorCompra(qtdeCompra)}")
             return True
+
+    def toStr(self):
+        print(f"Fornecedor: {self.__fornecedor.getNome()}")
+        for produto in range(len(self.listarProduto())):
+            print(f"Produto: {self.__produto[produto].getNome()}")
+            print(f"Valor Unitário: {self.__precoUnit}")

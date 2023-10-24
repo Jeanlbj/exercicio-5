@@ -114,7 +114,7 @@ if __name__ == "__main__":
     venda1.addProduto(produto1)
     venda2.addProduto(produto2)
     venda3.addProduto(produto3)
-    venda4.addProduto(venda4)
+    venda4.addProduto(produto4)
 
     # Criando a amarração entre Produto/Compra
 
@@ -155,19 +155,49 @@ if __name__ == "__main__":
     # Efetuando vendas
 
     print("Venda 1:")
+    venda1.toStr()
     venda1.vender(produto1, 10)
 
     print()
 
     print("Venda 2:")
+    venda2.toStr()
     venda2.vender(produto2, 2)
 
     print()
 
     print("Venda 3:")
+    venda3.toStr()
     venda3.vender(produto3, 5)
 
     print()
 
     print("Venda 4:")
+    venda4.toStr()
     venda4.vender(produto4, 5)
+
+    print()
+
+    # Efetuando compra
+
+    print("Compra 1:")
+    compra1.toStr()
+    compra1.comprar(produto1, 800)
+
+    print()
+
+    print("Compra 2:")
+    compra2.toStr()
+    compra2.comprar(produto2, 400)
+
+    print()
+
+    print("Compra 3:")
+    compra3.toStr()
+    compra3.comprar(produto3, 700)
+
+    print()
+
+    print("Compra 4:")
+    compra4.toStr()
+    compra4.comprar(produto4, 120)

@@ -31,7 +31,14 @@ class Venda(Transacao):
             return False
         else:
             produto.debitarEstoque(qtdeVenda)
-            print(f"Valor da venda: {produto.calcularValorVenda(qtdeVenda)}")
+            print(f"Quatidade: {qtdeVenda}")
+            print(f"Valor Total: {produto.calcularValorVenda(qtdeVenda)}")
             if produto.verificarEstoqueBaixo() is True:
                 print("Estoque baixo")
             return True
+
+    def toStr(self):
+        print(f"Cliente: {self.__cliente.getNome()}")
+        for produto in range(len(self.listarProduto())):
+            print(f"Produto: {self.__produto[produto].getNome()}")
+            print(f"Valor Unitário: {self.__produto[produto].getPrecoUnit()}")
